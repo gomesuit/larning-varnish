@@ -29,6 +29,7 @@ groupadd -g 992 varnish
 # -Mオプション(--no-create-homeオプション)：ホームディレクトリを作成しない
 useradd -c 'Varnish Cache' -g 992 -u 995 -M -s /sbin/nologin -d /var/lib/varnish varnish
 
+mkdir -p /etc/varnish
 cp /vagrant/settings/varnish_reload_vcl /usr/local/sbin/
 cp /vagrant/settings/varnish.service /usr/lib/systemd/system/varnish.service
 cp /vagrant/settings/varnish.params /etc/varnish/
