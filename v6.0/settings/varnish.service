@@ -34,7 +34,7 @@ ExecStart=/usr/local/sbin/varnishd \
   -a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
   -T ${VARNISH_ADMIN_LISTEN_ADDRESS}:${VARNISH_ADMIN_LISTEN_PORT} \
   -S $VARNISH_SECRET_FILE \
-  -j unix,user=$VARNISH_USER,ccgroup=$VARNISH_GROUP \
+  -j unix,user=${VARNISH_USER},ccgroup=${VARNISH_GROUP} \
   -s $VARNISH_STORAGE \
   $DAEMON_OPTS
 
