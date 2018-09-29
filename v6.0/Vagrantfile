@@ -10,5 +10,6 @@ Vagrant.configure('2') do |config|
 
     host.vm.hostname = hostname
     host.vm.network 'private_network', ip: ip_address
+    host.vm.provision :shell, path: 'install-varnish.sh'
   end
 end
