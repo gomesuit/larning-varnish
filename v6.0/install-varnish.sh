@@ -32,6 +32,8 @@ useradd -c 'Varnish Cache' -g 992 -u 995 -M -s /sbin/nologin -d /var/lib/varnish
 mkdir -p /etc/varnish
 cp /vagrant/settings/varnish_reload_vcl /usr/local/sbin/
 cp /vagrant/settings/varnish.service /usr/lib/systemd/system/varnish.service
-cp /vagrant/settings/varnish.params /etc/varnish/
-cp /vagrant/settings/secret /etc/varnish/
-cp /vagrant/settings/default.vcl /etc/varnish/
+systemctl daemon-reload
+
+ln -sf /vagrant/settings/varnish.params /etc/varnish/
+ln -sf  /vagrant/settings/secret /etc/varnish/
+ln -sf  /vagrant/settings/default.vcl /etc/varnish/
